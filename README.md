@@ -4,6 +4,7 @@ Példa repository Azure Pipeline alapú megoldásokhoz
 
 ## Git alapok
 
+
 ### Telepítés
 
 https://git-scm.com
@@ -46,3 +47,8 @@ git commit -m "valami szöveg, ami leírja a módosítást"
 ```bash
 git push origin main
 ```
+
+
+## Git kommunikácó
+
+![Git Communication](images/git01.png))

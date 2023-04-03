@@ -11,7 +11,7 @@ https://git-scm.com
 
 ### Első beállítás
 
-Furrast le az adott parancsokat az adataiddal
+Futtasd le az adott parancsokat az adataiddal
 
 ```bash
 git config --global user.name "Neved"

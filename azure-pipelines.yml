@@ -10,13 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Sziasztok!
-  displayName: 'Köszönés'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
 - script: |
-    env
-    ls
-    pwd
-    sudo apt update
-    sudo apt upgrade -y
-  displayName: 'Valami script és frissítés'
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'

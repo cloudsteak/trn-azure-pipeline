@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: echo Üdv az Azure Pipeline világában!
   displayName: 'Run a one-line script'
 
 - script: |

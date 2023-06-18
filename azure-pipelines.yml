@@ -18,8 +18,10 @@ steps:
     env
     ls
     pwd
+    echo "##[group]Frissítés"
     echo "##[command]Linux update"
     sudo apt update
     echo "##[command]Linux upgrade - kérdés nélkül"
     sudo apt upgrade -y
+    echo "##[endgroup]"
   displayName: 'Linux frissítés'

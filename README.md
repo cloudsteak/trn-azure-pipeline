@@ -18,6 +18,13 @@ git config --global user.name "Neved"
 git config --global user.email "az@email.címed"
 ```
 
+
+## GitHub Desktop
+
+Telepítés: https://desktop.github.com
+(Windows, Mac, Linux)
+
+
 ### Helyi repo létrehozása adott mappában
 
 ```bash

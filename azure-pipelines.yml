@@ -14,6 +14,12 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo "##[debug]Környezeti változók"
+    env
+    ls
+    pwd
+    echo "##[command]Linux update"
+    sudo apt update
+    echo "##[command]Linux upgrade - kérdés nélkül"
+    sudo apt upgrade -y
+  displayName: 'Linux frissítés'

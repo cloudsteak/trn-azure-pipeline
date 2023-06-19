@@ -11,11 +11,20 @@ pool:
 
 steps:
 - script: echo Üdv az Azure DevOps-Ban!
-  displayName: 'Run a one-line script'
+  displayName: 'Köszöntés'
 
 - script: |
+    echo "##[group]Hol vagyunk"
+    echo "##[command]Elérési út"
     pwd
+    echo "##[command]Fájlok és mappák"
     ls 
+    echo "##[endgroup]"
 
+    echo "##[group]Linux frissítés"
+    echo "##[debug]Update"
     sudo apt update
-  displayName: 'Run a multi-line script'
+    echo "##[debug]Upgrade"
+    sudo apt upgrade -y
+    echo "##[endgroup]"
+  displayName: 'Linux frissítés'

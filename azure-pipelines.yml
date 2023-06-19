@@ -10,21 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Üdv az Azure DevOps-Ban!
-  displayName: 'Köszöntés'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
 - script: |
-    echo "##[group]Hol vagyunk"
-    echo "##[command]Elérési út"
-    pwd
-    echo "##[command]Fájlok és mappák"
-    ls 
-    echo "##[endgroup]"
-
-    echo "##[group]Linux frissítés"
-    echo "##[debug]Update"
-    sudo apt update
-    echo "##[debug]Upgrade"
-    sudo apt upgrade -y
-    echo "##[endgroup]"
-  displayName: 'Linux frissítés'
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'

@@ -92,4 +92,95 @@ git push origin main
 17. Ha GitHub-on módosítasz a kódon, akkor a pipeline elindul és a benne lévő kód lefut.
 
 
+# Pipeline példa
 
+Hozz létre egy `demo` nevű branch-et és válts át rá
+
+## Azure Pipeline
+
+1. Nyisd meg a `azure-pipelines.yml` fájlt
+2. Másold bele az alábbi tartalmat:
+```yaml
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+- demo
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Egy soros parancsok'
+
+- script: |
+    echo "##[section]Egyéb parancs, megjegyzéssel"
+    echo "##[command]Mappa tartalmának listázása"
+    ls -l
+    echo "##[command]Elérési út"
+    pwd
+    echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+    env
+
+  displayName: 'Több soros parancsok'
+```
+3. `Commit` majd `Push`
+4. [Azure DevOps-ban](https://cloudsteak.visualstudio.com/MentorKlub/_build) nézd meg mi történik
+
+## GitHub Acton
+
+1. Workflows mappa létrehozás
+   ```bash
+   mkdir -p .github/workflows
+   ```
+2. Hozz létre egy `alap.yaml` nevű fájlt ebben a mappában.
+3. Másold bele az `alap.yaml` fájlba az alábbit:
+```yaml
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "demo" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Egy soros parancsok
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Több soros parancsok
+        run: |
+          echo "##[section]Egyéb parancs, megjegyzéssel"
+          echo "##[command]Mappa tartalmának listázása"
+          ls -l
+          echo "##[command]Elérési út"
+          pwd
+          echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+          env
+```
+4. `Commit` majd `Push`
+5. [Actions](https://github.com/cloudsteak/trn-azure-pipeline/actions) link alatt nézd meg mi történik.

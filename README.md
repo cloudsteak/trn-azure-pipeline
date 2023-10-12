@@ -92,6 +92,11 @@ git push origin main
 17. Ha GitHub-on módosítasz a kódon, akkor a pipeline elindul és a benne lévő kód lefut.
 
 
+# Elérhető képek (Virtuális gépek ée komponensek)
+
+https://github.com/actions/runner-images
+
+
 # Pipeline példa
 
 Hozz létre egy `demo` nevű branch-et és válts át rá

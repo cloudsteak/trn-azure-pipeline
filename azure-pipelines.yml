@@ -12,9 +12,13 @@ pool:
 
 steps:
 - script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  displayName: 'Egysoros parancs'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
+    echo "##[section]Ez egy nagyobb rész"
+    echo "##[command]Fájlok listája"
+    ls -l
+    echo "##[debug]Helyi mappa"
+    pwd
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'Többsoros'

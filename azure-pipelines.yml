@@ -20,5 +20,5 @@ steps:
     ls -l
     echo "##[debug]Helyi mappa"
     pwd
-    echo See https://aka.ms/yaml
+    env
   displayName: 'Többsoros'

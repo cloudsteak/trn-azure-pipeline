@@ -22,3 +22,4 @@ steps:
     pwd
     env
   displayName: 'Többsoros'
+  condition: eq('1', '0')

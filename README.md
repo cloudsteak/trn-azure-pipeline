@@ -106,10 +106,9 @@ Hozz létre egy `demo` nevű branch-et és válts át rá
 1. Nyisd meg a `azure-pipelines.yml` fájlt
 2. Másold bele az alábbi tartalmat:
 ```yaml
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Azure Pipeline
+# Ez egy egyszerű példa
+# Tobávvi információk: https://aka.ms/yaml
 
 trigger:
 - main
@@ -118,20 +117,22 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Egy soros parancsok'
-
-- script: |
-    echo "##[section]Egyéb parancs, megjegyzéssel"
-    echo "##[command]Mappa tartalmának listázása"
-    ls -l
-    echo "##[command]Elérési út"
-    pwd
-    echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
-    env
-
-  displayName: 'Több soros parancsok'
+stages: 
+  - stage: Azure_Pipeline_-_Alap
+    jobs:
+      - job: Egyszeru_feladat
+        steps:
+          - script: echo Hello, world!
+            displayName: 'Egysoros parancs'
+          - script: |
+              echo "##[section]Ez egy nagyobb rész"
+              echo "##[command]Fájlok listája"
+              ls -l
+              echo "##[debug]Helyi mappa"
+              pwd
+              echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+              env
+            displayName: 'Többsoros'
 ```
 3. `Commit` majd `Push`
 4. [Azure DevOps-ban](https://cloudsteak.visualstudio.com/MentorKlub/_build) nézd meg mi történik
@@ -145,44 +146,44 @@ steps:
 2. Hozz létre egy `alap.yaml` nevű fájlt ebben a mappában.
 3. Másold bele az `alap.yaml` fájlba az alábbit:
 ```yaml
-# This is a basic workflow to help you get started with Actions
+# GitHub Action
+# Egyszerű példa a GitHub Action használatára
 
-name: CI
+name: GitHub Action - Alap
 
-# Controls when the workflow will run
+# Mikor futtassuk a workflow-t
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
-    branches: [ "demo" ]
+    branches: ["demo"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Fő feladat
 jobs:
-  # This workflow contains a single job called "build"
+  # Egyszerű build feladat
   build:
-    # The type of runner that the job will run on
+    # Milyen operációs rendszeren futtassuk a workflow-t
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Lépések sorban
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Először is töltsük le a repót
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
+      # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |
-          echo "##[section]Egyéb parancs, megjegyzéssel"
-          echo "##[command]Mappa tartalmának listázása"
+          echo "##[section]Ez egy nagyobb rész"
+          echo "##[command]Fájlok listája"
           ls -l
-          echo "##[command]Elérési út"
+          echo "##[debug]Helyi mappa"
           pwd
           echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env

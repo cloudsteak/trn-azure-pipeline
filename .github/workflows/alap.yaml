@@ -32,10 +32,10 @@ jobs:
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |
-          echo "##[section]Ez egy nagyobb rész"
-          echo "##[command]Fájlok listája"
+          echo "## Ez egy nagyobb rész"
+          echo "## Fájlok listája"
           ls -l
-          echo "##[debug]Helyi mappa"
+          echo "## Helyi mappa"
           pwd
-          echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+          echo "## Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env

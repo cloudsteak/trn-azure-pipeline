@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 stages: 
-  - stage: Azure_Pipeline_-_Alap
+  - stage: Azure_Pipeline_Alap
     jobs:
       - job: Egyszeru_feladat
         steps:

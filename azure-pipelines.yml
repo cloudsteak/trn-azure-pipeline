@@ -10,15 +10,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Egysoros parancs'
-
-- script: |
-    echo "##[section]Ez egy nagyobb rész"
-    echo "##[command]Fájlok listája"
-    ls -l
-    echo "##[debug]Helyi mappa"
-    pwd
-    env
-  displayName: 'Többsoros'
+stages: 
+  - stage: Azure_Pipeline_-_Alap
+    jobs:
+      - job: Egyszeru_feladat
+        steps:
+          - script: echo Hello, world!
+            displayName: 'Egysoros parancs'
+          - script: |
+              echo "##[section]Ez egy nagyobb rész"
+              echo "##[command]Fájlok listája"
+              ls -l
+              echo "##[debug]Helyi mappa"
+              pwd
+              env
+            displayName: 'Többsoros'

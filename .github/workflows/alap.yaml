@@ -1,35 +1,35 @@
-# Starter pipeline
-# This is a basic workflow to help you get started with Actions
+# GitHub Action
+# Egyszerű példa a GitHub Action használatára
 
 name: GitHub Action - Alap
 
-# Controls when the workflow will run
+# Mikor futtassuk a workflow-t
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
     branches: ["demo"]
   pull_request:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Fő feladat
 jobs:
-  # This workflow contains a single job called "build"
+  # Egyszerű build feladat
   build:
-    # The type of runner that the job will run on
+    # Milyen operációs rendszeren futtassuk a workflow-t
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Lépések sorban
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Először is töltsük le a repót
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!
-      # Runs a set of commands using the runners shell
+      # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |
           echo "##[section]Ez egy nagyobb rész"
@@ -37,4 +37,5 @@ jobs:
           ls -l
           echo "##[debug]Helyi mappa"
           pwd
+          echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env

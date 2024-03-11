@@ -1,7 +1,6 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Azure Pipeline
+# Ez egy egyszerű példa
+# Tobávvi információk: https://aka.ms/yaml
 
 trigger:
 - main
@@ -23,5 +22,6 @@ stages:
               ls -l
               echo "##[debug]Helyi mappa"
               pwd
+              echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
               env
             displayName: 'Többsoros'

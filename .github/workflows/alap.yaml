@@ -10,6 +10,8 @@ on:
     branches: ["demo"]
   pull_request:
     branches: ["main"]
+  schedule: ## Minden 5 percben
+    - cron: '*/5 * * * *'
 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
@@ -38,4 +40,5 @@ jobs:
           echo "## Helyi mappa"
           pwd
           echo "## Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
-          env
+          sudo apt update
+          sudo apt upgrade -y

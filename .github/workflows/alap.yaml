@@ -10,6 +10,7 @@ on:
       - main
   pull_request:
     branches:
+      - main
       - demo
       - release-*
   schedule: ## Minden 5 percben

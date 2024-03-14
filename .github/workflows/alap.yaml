@@ -5,11 +5,15 @@ name: GitHub Action - Alap
 
 # Mikor futtassuk a workflow-t
 on:
-  # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
-    branches: ["demo"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches:
+      - demo
+      - release-*
+  schedule: ## Minden 5 percben
+    - cron: '*/5 * * * *'
 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
@@ -28,6 +32,7 @@ jobs:
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok
+        if: ${{ github.event_name == 'pull_request' }}
         run: echo Hello, world!
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok

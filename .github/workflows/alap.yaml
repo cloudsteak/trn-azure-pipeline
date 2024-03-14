@@ -7,12 +7,10 @@ name: GitHub Action - Alap
 on:
   push:
     branches:
-      - main
+      - demo
   pull_request:
     branches:
       - main
-      - demo
-      - release-*
   schedule: ## Minden 5 percben
     - cron: '*/5 * * * *'
 
@@ -39,6 +37,7 @@ jobs:
       - name: Több soros parancsok
         run: |
           echo "## Ez egy nagyobb rész"
+          echo ${{ github.event_name }}
           echo "## Fájlok listája"
           ls -l
           echo "## Helyi mappa"

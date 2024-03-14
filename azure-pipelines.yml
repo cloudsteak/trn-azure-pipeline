@@ -15,6 +15,7 @@ stages:
       - job: Egyszeru_feladat
         steps:
           - script: echo Hello, world!
+            condition: eq(variables['Build.Reason'], 'PullRequest')
             displayName: 'Egysoros parancs'
           - script: |
               echo "##[section]Ez egy nagyobb rész"
@@ -25,3 +26,4 @@ stages:
               echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
               env
             displayName: 'Többsoros'
+            condition: eq(variables['Build.Reason'], 'IndividualCI')

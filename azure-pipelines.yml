@@ -6,6 +6,15 @@ trigger:
 - main
 - demo
 
+
+schedules:
+  - cron: '*/5 * * * *'
+    displayName: Minden 5 percben
+    branches:
+      include:
+      - main
+      - demo
+
 pool:
   vmImage: ubuntu-latest
 

@@ -10,6 +10,8 @@ on:
     branches: ["demo"]
   pull_request:
     branches: ["main"]
+  schedule: ## Minden 5 percben
+    - cron: '*/5 * * * *'
 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:

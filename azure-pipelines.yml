@@ -16,6 +16,7 @@ stages:
         steps:
           - script: echo Hello, world!
             displayName: 'Egysoros parancs'
+            condition: eq(variables['Build.Reason'], 'IndividualCI')
           - script: |
               echo "##[section]Ez egy nagyobb rész"
               echo "##[command]Fájlok listája"
@@ -24,3 +25,4 @@ stages:
               pwd
               echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
             displayName: 'Többsoros'
+            condition: eq(variables['Build.Reason'], 'PullRequest')

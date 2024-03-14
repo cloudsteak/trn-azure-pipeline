@@ -37,7 +37,6 @@ jobs:
       - name: Több soros parancsok
         run: |
           echo "## Ez egy nagyobb rész"
-          echo ${{ github.event_name }}
           echo "## Fájlok listája"
           ls -l
           echo "## Helyi mappa"

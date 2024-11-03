@@ -8,6 +8,8 @@ on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   pull_request:
     branches: ["main"]
+  push:
+    branches: ["demo"]
 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:

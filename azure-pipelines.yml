@@ -22,6 +22,6 @@ stages:
               ls -l
               echo "##[debug]Helyi mappa"
               pwd
-              echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+              echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibakeresési üzenetet szeretnénk kiiratni"
               env
             displayName: 'Többsoros'

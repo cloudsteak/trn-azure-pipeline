@@ -35,3 +35,5 @@ jobs:
           ls -l
           echo "## Helyi mappa"
           pwd
+      - name: python
+        run: python 2024.11.04.py

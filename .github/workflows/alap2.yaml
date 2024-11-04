@@ -1,7 +1,6 @@
 # GitHub Action
 # Egyszerű példa a GitHub Action használatára
-
-name: GitHub Action - Alap
+name: GitHub Action - Alap2
 
 # Mikor futtassuk a workflow-t
 on:
@@ -23,7 +22,6 @@ jobs:
     steps:
       # Először is töltsük le a repót
       - uses: actions/checkout@v3
-
       # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!
@@ -35,5 +33,5 @@ jobs:
           ls -l
           echo "## Helyi mappa"
           pwd
-          echo "## Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
-          env
+      - name: python
+        run: python 20241104.py

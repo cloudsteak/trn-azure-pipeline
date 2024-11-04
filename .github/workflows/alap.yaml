@@ -1,10 +1,13 @@
 # GitHub Action
 # Egyszerű példa a GitHub Action használatára
-name: GitHub Action - Alap2
+
+name: GitHub Action - Alap
 
 # Mikor futtassuk a workflow-t
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
+  push:
+    branches: ["demo"]
   pull_request:
     branches: ["main"]
 
@@ -22,16 +25,17 @@ jobs:
     steps:
       # Először is töltsük le a repót
       - uses: actions/checkout@v3
+
       # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |
-          echo "## Ez egy nagyobb rész"
-          echo "## Fájlok listája"
+          echo "##[section]Ez egy nagyobb rész"
+          echo "##[command]Fájlok listája"
           ls -l
-          echo "## Helyi mappa"
+          echo "##[debug]Helyi mappa"
           pwd
-      - name: python
-        run: python 20241104.py
+          echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
+          env

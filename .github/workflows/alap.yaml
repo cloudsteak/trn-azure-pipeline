@@ -5,6 +5,8 @@ name: GitHub Action - Alap
 # Mikor futtassuk a workflow-t
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
+  push:
+    branches: ["demo"]
   pull_request:
     branches: ["main"]
 

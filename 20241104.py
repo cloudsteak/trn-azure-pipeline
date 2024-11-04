@@ -1,1 +1,1 @@
-print("DevOps")
+print("DevOp pipeline vagyok!")

@@ -35,5 +35,3 @@ jobs:
           ls -l
           echo "## Helyi mappa"
           pwd
-          echo "## Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
-          env

@@ -36,4 +36,4 @@ jobs:
           echo "## Helyi mappa"
           pwd
       - name: python
-        run: python 2024.11.04.py
+        run: python 20241104.py

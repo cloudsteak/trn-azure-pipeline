@@ -2,7 +2,6 @@
 # Egyszerű példa a GitHub Action használatára
 
 name: GitHub Action - Alap
-
 # Mikor futtassuk a workflow-t
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
@@ -13,7 +12,6 @@ on:
 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
-
 # Fő feladat
 jobs:
   # Egyszerű build feladat
@@ -25,7 +23,6 @@ jobs:
     steps:
       # Először is töltsük le a repót
       - uses: actions/checkout@v3
-
       # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!

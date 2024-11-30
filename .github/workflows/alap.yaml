@@ -5,10 +5,9 @@ name: GitHub Action - Alap
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
-    branches: ["20241131demo"]
+  branches: ["20241131demo"]
   pull_request:
     branches: ["main"]
-
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
 # Fő feladat

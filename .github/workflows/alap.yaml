@@ -18,15 +18,13 @@ jobs:
   build:
     # Milyen operációs rendszeren futtassuk a workflow-t
     runs-on: ubuntu-latest
-
-    # Lépések sorban
+  # Lépések sorban
     steps:
       # Először is töltsük le a repót
       - uses: actions/checkout@v3
       # Futassunk egy parancsot
       - name: Egy soros parancsok
         run: echo Hello, world!
-      
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |

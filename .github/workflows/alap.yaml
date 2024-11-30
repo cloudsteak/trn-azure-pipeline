@@ -1,6 +1,5 @@
 # GitHub Action
 # Egyszerű példa a GitHub Action használatára
-
 name: GitHub Action - Alap
 # Mikor futtassuk a workflow-t
 on:

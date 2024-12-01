@@ -4,11 +4,11 @@ name: GitHub Action - Alap2
 # Mikor futtassuk a workflow-t
   on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
-    pull_request:
+  pull_request:
     branches: ["main"]
     #Összefűzés
   # Engedélyezzük a manuális futtatást is
-  workflow_dispatch:
+workflow_dispatch:
 # Fő feladat
 jobs:
   # Egyszerű build feladat
@@ -25,8 +25,8 @@ jobs:
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |
-          echo "##[section]Ez egy nagyobb rész"
-          echo "##[command]Fájlok listája"
+          echo "## Ez egy nagyobb rész"
+          echo "## Fájlok listája"
           ls -l
           echo "##[debug]Helyi mappa"
           pwd

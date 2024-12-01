@@ -6,9 +6,7 @@ on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
     branches: ["20241130demo"]
-  pull_request:
-    branches: ["main"]
-    #Összefűzés
+ 
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
 # Fő feladat
@@ -21,9 +19,6 @@ jobs:
     steps:
       # Először is töltsük le a repót
       - uses: actions/checkout@v3
-      # Futassunk egy parancsot
-      - name: Egy soros parancsok
-        run: echo Hello, world!
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok
         run: |

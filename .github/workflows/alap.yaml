@@ -8,6 +8,7 @@ on:
     branches: ["20241130demo"]
   pull_request:
     branches: ["main"]
+    #Összefűzés
   # Engedélyezzük a manuális futtatást is
   workflow_dispatch:
 # Fő feladat

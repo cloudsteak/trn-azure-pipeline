@@ -4,7 +4,7 @@
 
 trigger:
 - main
--20241130demo
+- 20241130demo
 
 pool:
   vmImage: ubuntu-latest

@@ -27,7 +27,5 @@ jobs:
         run: |
           echo "## Ez egy nagyobb rész"
           echo "## Fájlok listája"
-          ls -l
-          echo "##[debug]Helyi mappa"
-          pwd
+         
          

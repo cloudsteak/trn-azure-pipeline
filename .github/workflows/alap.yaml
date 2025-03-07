@@ -17,7 +17,8 @@ on:
 # Fő feladat
 jobs:
   # Egyszerű build feladat
-  build:
+  learn:
+    name: Példa Pipeline
     # Milyen operációs rendszeren futtassuk a workflow-t
     runs-on: ubuntu-latest
 

@@ -3,18 +3,18 @@
 # Tobávvi információk: https://aka.ms/yaml
 
 trigger:
-- main
+  - main
 
 pool:
   vmImage: ubuntu-latest
 
-stages: 
+stages:
   - stage: Azure_Pipeline_Alap
     jobs:
       - job: Egyszeru_feladat
         steps:
           - script: echo Hello, world!
-            displayName: 'Egysoros parancs'
+            displayName: "Egysoros parancs"
           - script: |
               echo "##[section]Ez egy nagyobb rész"
               echo "##[command]Fájlok listája"
@@ -23,4 +23,14 @@ stages:
               pwd
               echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibakeresési üzenetet szeretnénk kiiratni"
               env
-            displayName: 'Többsoros'
+            displayName: "Többsoros"
+  - stage: Python_App
+    jobs:
+      - job: Python_App
+        steps:
+          - task: PythonScript@0
+            inputs:
+              scriptSource: "filePath"
+              scriptPath: "main.py"
+              workingDirectory: "$(System.DefaultWorkingDirectory)/app"
+              pythonInterpreter: "python3"

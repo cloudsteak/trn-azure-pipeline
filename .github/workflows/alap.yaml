@@ -39,3 +39,11 @@ jobs:
           pwd
           echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env
+      - name: Python előkészítés
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Python alkalmazás futtatása
+        run: python main.py
+        working-directory: ./app
+  

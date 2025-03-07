@@ -32,5 +32,5 @@ stages:
           - task: PythonScript@0
             inputs:
               scriptSource: "filePath"
-              scriptPath: "main.py"
+              scriptPath: "app/main.py"
               pythonInterpreter: "python3"

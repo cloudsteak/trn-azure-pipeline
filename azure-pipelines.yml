@@ -33,5 +33,4 @@ stages:
             inputs:
               scriptSource: "filePath"
               scriptPath: "main.py"
-              workingDirectory: "$(System.DefaultWorkingDirectory)/app"
               pythonInterpreter: "python3"

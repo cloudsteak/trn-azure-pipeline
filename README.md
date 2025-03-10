@@ -190,3 +190,5 @@ jobs:
 ```
 4. `Commit` majd `Push`
 5. [Actions](https://github.com/cloudsteak/trn-azure-pipeline/actions) link alatt nézd meg mi történik.
+
+6. Egy új sor

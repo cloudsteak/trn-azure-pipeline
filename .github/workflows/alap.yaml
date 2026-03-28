@@ -7,7 +7,7 @@ name: GitHub Action - Alap
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
-    branches: ["demo", "Update"]
+    branches: ["demo"]
   pull_request:
     branches: ["main"]
 
@@ -25,7 +25,7 @@ jobs:
     # Lépések sorban
     steps:
       # Először is töltsük le a repót
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@v6
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok

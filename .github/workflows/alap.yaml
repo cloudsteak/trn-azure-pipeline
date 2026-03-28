@@ -7,7 +7,7 @@ name: GitHub Action - Alap
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:
-    branches: ["demo"]
+    branches: ["demo", "Update"]
   pull_request:
     branches: ["main"]
 
@@ -25,7 +25,7 @@ jobs:
     # Lépések sorban
     steps:
       # Először is töltsük le a repót
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok
@@ -41,9 +41,9 @@ jobs:
           echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env
       - name: Python előkészítés
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.x"
+          python-version: "3.13"
       - name: Python alkalmazás futtatása
         run: python main.py
         working-directory: ./app

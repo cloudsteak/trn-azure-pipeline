@@ -1,0 +1,27 @@
+# GitHub Action
+# Egyszerű példa a GitHub Action használatára
+name: GitHub Action - Második
+
+# Mikor futtassuk a workflow-t
+on:
+  # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
+  push:
+    branches: ["demo"]
+  pull_request:
+    branches: ["main"]
+
+  # Engedélyezzük a manuális futtatást is
+  workflow_dispatch:
+
+# Fő feladat
+jobs:
+  # Egyszerű build feladat
+  learn:
+    name: Példa Pipeline
+    # Milyen operációs rendszeren futtassuk a workflow-t
+    runs-on: ubuntu-latest
+
+    # Lépések sorban
+    steps:
+      # Először is töltsük le a repót
+      - uses: actions/checkout@v6

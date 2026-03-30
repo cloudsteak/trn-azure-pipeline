@@ -1,6 +1,5 @@
 # GitHub Action
 # Egyszerű példa a GitHub Action használatára
-
 name: GitHub Action - Alap
 
 # Mikor futtassuk a workflow-t
@@ -29,6 +28,7 @@ jobs:
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok
+        id: egy_soros
         run: echo Hello, world!
       # Futtassunk több parancsot egyben
       - name: Több soros parancsok

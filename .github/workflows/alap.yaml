@@ -2,7 +2,7 @@
 # Egyszerű példa a GitHub Action használatára
 name: GitHub Action - Alap
 
-# Mikor futtassuk a workflow-t
+# Mikor futtassuk a workflow-t.
 on:
   # A Workflow a push és a pull_request eseményre fut le más-más branch-ekre
   push:

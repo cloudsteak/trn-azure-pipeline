@@ -1,1 +1,1 @@
-print("Ez egy példa kód Python-ban! Hello World!")
+print("Ez egy példa kód Python-ban! Hello World!

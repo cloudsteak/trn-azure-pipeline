@@ -172,7 +172,7 @@ jobs:
     # Lépések sorban
     steps:
       # Először is töltsük le a repót
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok

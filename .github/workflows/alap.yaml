@@ -24,7 +24,7 @@ jobs:
     # Lépések sorban
     steps:
       # Először is töltsük le a repót
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # Futassunk egy parancsot
       - name: Egy soros parancsok
@@ -41,7 +41,7 @@ jobs:
           echo "##[debug]Ez egy olyan üzenet, amit akkor használunk, ha valami hibajavítási üzenetet szeretnénk kiiratni"
           env
       - name: Python előkészítés
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
       - name: Python alkalmazás futtatása
